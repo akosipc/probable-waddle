@@ -1,12 +1,13 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 
-export default class Item extends Component {
-  render() {
-    return (
-      <li>
-        { this.props.name }
-      </li>
-    )
-  }
+const Item  = (props) => { 
+  const {icon ,name} = props
+  return( 
+    <li className="list-unstyled">
+      <i className={icon}></i> { name }
+    </li>
+  )
 }
+
+export default Item

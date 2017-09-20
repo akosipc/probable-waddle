@@ -4,26 +4,27 @@ import PropTypes from "prop-types"
 import Item from "./Item";
 
 export default class List extends Component {
-  renderUsers() {
-    const { items } = this.props
+  renderItems() {
+    const { items, icon } = this.props
 
     return items.map( (item) => {
       return (
         <Item
           key={ item.id }
-          name={ item.username }/>
+          icon= {icon}
+          name={ item.username || item.name }/>
       )
     })
   }
 
+
   render() {
-    const { items } = this.props
 
     return (
       <div>
-        Direct Message
+        {this.props.title}
         <ul>
-          { this.renderUsers() }
+          { this.renderItems() }
         </ul>
       </div>
     )
